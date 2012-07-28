@@ -1,0 +1,72 @@
+# Configuration file for ExtraFluffy.
+# 
+# Common subkeys:
+#   chance: Probability that any extra items will be dropped at all. 0.0:never, 1.0:always.
+#   min:    If extra items are to be dropped, how many (lower bound, inclusive).
+#   max:    If extra items are to be dropped, how many (upper bound, inclusive).
+#   stack:  Whether to group all the extra items into a single item stack entity.
+#           A good idea if you're dropping large amounts of items.
+# 
+
+#
+# Wool to add when shearing a sheep, on top of the normal 1-3 blocks.
+#
+extra-shear-wool:
+  chance: 1.0
+  min: 2
+  max: 5
+  stack: false
+
+#
+# Slime balls to drop when large slimes split. Normally only the smallest
+# slimes drop balls when they die.
+#
+extra-split-slime-balls:
+  chance: 0.5
+  min: 1
+  max: 1
+  stack: false
+
+#
+# List of entity types to remove all normal drops for, giving you a clean
+# slate to work with. This can be either the entity type name or id number.
+# Example: [COW, CHICKEN, ZOMBIE]
+#
+clear-death-loot: []
+
+#
+# List of entity types with items to add upon death, on top of the entity's
+# normal drops.
+# 
+# If you want an entity type to drop more than one type of item, create
+# multiple sections for the entity type, appending "-number" as needed, e.g.
+# "COW", "COW-2", "COW-3".
+# 
+# The item can either be a name or an id number. For example, "item: IRON_SWORD"
+# and "item: 267" are equivalent. Alternately, if you want to specify additional
+# info like a data value or enchantments, serialized ItemStack instances are
+# accepted as well. For example, the following specifies a half-used iron sword
+# enchanted with Knockback I and Smite III:
+# "item: {==: org.bukkit.inventory.ItemStack, type: IRON_SWORD, damage: 125, enchantments: {KNOCKBACK: 1, DAMAGE_UNDEAD: 3}}"
+#
+extra-death-loot:
+  COW:
+    item: LEATHER
+    chance: 1.0
+    min: 2
+    max: 5
+    stack: false
+  CHICKEN:
+    item: FEATHER
+    chance: 1.0
+    min: 2
+    max: 5
+    stack: false
+  SQUID:
+    item: INK_SACK
+    chance: 1.0
+    min: 2
+    max: 5
+    stack: false
+
+log-summary: true
