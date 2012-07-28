@@ -5,12 +5,12 @@ Sheep can be fluffier, yielding more wool per shear. Slimes can be slimier,
 dropping slime balls every time they split. Dying mobs of all types can drop
 extra items.
 
-### Why do this?
+## Why do this?
 
 Boosting mob drops is one way to encourage players to keep fewer farm animals.
 Fewer entities generally means improved server performance.
 
-### But wait, there's more!
+## But wait, there's more!
 
 You can also do some creative things with this plugin. Dying mobs can drop any
 item, even if they don't normally drop it. Examples:
@@ -25,9 +25,8 @@ item, even if they don't normally drop it. Examples:
   essentially breed silverfish by fighting them. Players could also use the
   silverfish eggs for dispenser traps in their base.
 
-### Compiling and configuring
+## Compiling and configuring
 
 Use [Maven](http://maven.apache.org/) to compile.
 
-See [config.yml](src/main/resources/config.yml) information about the various
-configuration options.
+See config.yml information about the various configuration options.
