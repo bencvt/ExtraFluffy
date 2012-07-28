@@ -29,4 +29,4 @@ item, even if they don't normally drop it. Examples:
 
 Use [Maven](http://maven.apache.org/) to compile.
 
-See config.yml information about the various configuration options.
+See config.yml for information about the various configuration options.
