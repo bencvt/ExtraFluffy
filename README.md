@@ -36,10 +36,8 @@ item, even if they don't normally drop it. Examples:
 Works exactly the same as any other Bukkit plugin:
 
 1. Get the latest jar. You can either:
-
   * Download the latest release from
     [BukkitDev/Curse](http://dev.bukkit.org/server-mods/extrafluffy/); or
-
   * Compile from source.
     Clone the [GitHub repo](https://github.com/bencvt/ExtraFluffy) and use
     [Maven](http://maven.apache.org/) to build.
