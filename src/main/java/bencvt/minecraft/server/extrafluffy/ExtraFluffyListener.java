@@ -82,7 +82,7 @@ class ExtraFluffyListener implements Listener {
     }
 
     private static int getRandomDropAmount(ConfigHelper.ExtraDropAmount extraDropAmount) {
-        if (rand.nextDouble() > extraDropAmount.chance) {
+        if (rand.nextDouble() >= extraDropAmount.chance) {
             return 0;
         }
         int lo = extraDropAmount.min;
