@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Material;
+import org.bukkit.entity.MagmaCube;
 import org.bukkit.entity.Sheep;
 import org.bukkit.entity.Slime;
 import org.bukkit.event.EventHandler;
@@ -49,6 +50,10 @@ class ExtraFluffyListener implements Listener {
     @EventHandler(ignoreCancelled=true)
     public void onSlimeSplit(SlimeSplitEvent event) {
         Slime slime = event.getEntity();
+        if (slime instanceof MagmaCube) {
+            // Only the green kind, please
+            return;
+        }
         int numItems = getRandomDropAmount(plugin.configHelper.EXTRA_SPLIT_SLIME_BALLS);
         if (plugin.configHelper.EXTRA_SPLIT_SLIME_BALLS.stack && numItems > 0) {
             slime.getWorld().dropItemNaturally(slime.getLocation(), new ItemStack(Material.SLIME_BALL, numItems));
