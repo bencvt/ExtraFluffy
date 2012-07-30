@@ -94,25 +94,25 @@ public class ConfigHelper
         }
         EntityType result = EntityType.fromName(value);
         if (result == null) {
-        	// accept aliases
-        	if (value.equalsIgnoreCase("MagmaCube")) {
-        		return EntityType.MAGMA_CUBE; // "LavaSlime"
-        	} else if (value.equalsIgnoreCase("Mooshroom")) {
-        		return EntityType.MUSHROOM_COW; // "MushroomCow"
-        	} else if (value.equalsIgnoreCase("Ocelot")) {
-        		return EntityType.OCELOT; // "Ozelot"
-        	} else if (value.equalsIgnoreCase("SnowGolem")) {
-        		return EntityType.SNOWMAN; // "SnowMan"
-        	} else if (value.equalsIgnoreCase("IronGolem")) {
-        		return EntityType.IRON_GOLEM; // "VillagerGolem"
-        	} else if (value.equalsIgnoreCase("Player")) {
-        		return EntityType.PLAYER; // no registered name
-        	}
-        	try {
-        		result = EntityType.fromId(Integer.parseInt(value));
-        	} catch (NumberFormatException e) {
-        		// do nothing
-        	}
+            // accept aliases
+            if (value.equalsIgnoreCase("MagmaCube")) {
+                return EntityType.MAGMA_CUBE; // "LavaSlime"
+            } else if (value.equalsIgnoreCase("Mooshroom")) {
+                return EntityType.MUSHROOM_COW; // "MushroomCow"
+            } else if (value.equalsIgnoreCase("Ocelot")) {
+                return EntityType.OCELOT; // "Ozelot"
+            } else if (value.equalsIgnoreCase("SnowGolem")) {
+                return EntityType.SNOWMAN; // "SnowMan"
+            } else if (value.equalsIgnoreCase("IronGolem")) {
+                return EntityType.IRON_GOLEM; // "VillagerGolem"
+            } else if (value.equalsIgnoreCase("Player")) {
+                return EntityType.PLAYER; // no registered name
+            }
+            try {
+                result = EntityType.fromId(Integer.parseInt(value));
+            } catch (NumberFormatException e) {
+                // do nothing
+            }
         }
         if (result == null) {
             throw new IllegalArgumentException(value + " does not match an entity type");
@@ -121,12 +121,12 @@ public class ConfigHelper
     }
 
     private static String getEntityTypeName(EntityType entityType) {
-    	String result = entityType.getName();
-    	if (result == null) {
-    		result = entityType.toString().toLowerCase();
-    		result = result.substring(0, 1).toUpperCase() + result.substring(1);
-    	}
-		return result;
+        String result = entityType.getName();
+        if (result == null) {
+            result = entityType.toString().toLowerCase();
+            result = result.substring(0, 1).toUpperCase() + result.substring(1);
+        }
+        return result;
     }
 
     public void logSummary(Logger log) {
