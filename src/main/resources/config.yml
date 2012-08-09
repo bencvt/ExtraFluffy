@@ -1,4 +1,5 @@
 # Configuration file for ExtraFluffy.
+# http://dev.bukkit.org/server-mods/extrafluffy/
 # 
 # Common subkeys:
 #   chance: Probability that any extra items will be dropped at all. 0.0:never, 1.0:always.

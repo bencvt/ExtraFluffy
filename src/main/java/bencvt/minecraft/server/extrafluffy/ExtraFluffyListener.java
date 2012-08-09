@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Material;
-import org.bukkit.entity.MagmaCube;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Sheep;
 import org.bukkit.entity.Slime;
 import org.bukkit.event.EventHandler;
@@ -24,7 +24,7 @@ class ExtraFluffyListener implements Listener {
 
     @EventHandler(ignoreCancelled=true)
     public void onPlayerShearEntity(PlayerShearEntityEvent event) {
-        if (!(event.getEntity() instanceof Sheep)) {
+        if (event.getEntity().getType() != EntityType.SHEEP) {
             // Mooshrooms aren't fluffy, go away
             return;
         }
@@ -50,7 +50,7 @@ class ExtraFluffyListener implements Listener {
     @EventHandler(ignoreCancelled=true)
     public void onSlimeSplit(SlimeSplitEvent event) {
         Slime slime = event.getEntity();
-        if (slime instanceof MagmaCube) {
+        if (slime.getType() != EntityType.SLIME) {
             // Only the green kind, please
             return;
         }

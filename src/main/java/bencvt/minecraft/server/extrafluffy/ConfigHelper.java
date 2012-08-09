@@ -61,6 +61,9 @@ public class ConfigHelper
                 // and simply match it to a material type, either name or id.
                 lootInfo.item = new ItemStack(Material.matchMaterial(subSection.get("item").toString()));
             }
+            if (lootInfo.item == null) {
+                throw new IllegalArgumentException(subSectionName + ": invalid item " + String.valueOf(subSection.get("item")));
+            }
             lootInfo.dropAmount = getExtraDropAmount(subSection);
             EXTRA_DEATH_LOOT.add(lootInfo);
         }

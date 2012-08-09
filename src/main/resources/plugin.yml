@@ -1,4 +1,5 @@
 name: ExtraFluffy
-version: 1.0
+version: ${project.version}
 author: bencvt
+website: http://dev.bukkit.org/server-mods/extrafluffy/
 main: bencvt.minecraft.server.extrafluffy.ExtraFluffyPlugin
