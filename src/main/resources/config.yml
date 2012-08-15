@@ -49,6 +49,7 @@ clear-death-loot: []
 # accepted as well. For example, the following specifies a half-used iron sword
 # enchanted with Knockback I and Smite III:
 # "item: {==: org.bukkit.inventory.ItemStack, type: IRON_SWORD, damage: 125, enchantments: {KNOCKBACK: 1, DAMAGE_UNDEAD: 3}}"
+# For a list of all valid enchantment identifiers, see: http://jd.bukkit.org/apidocs/org/bukkit/enchantments/Enchantment.html
 #
 extra-death-loot:
   COW:
