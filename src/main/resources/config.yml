@@ -1,5 +1,5 @@
-# Configuration file for ExtraFluffy.
-# http://dev.bukkit.org/server-mods/extrafluffy/
+# Configuration file for ${project.name}.
+# ${project.url}
 # 
 # Common subkeys:
 #   chance: Probability that any extra items will be dropped at all. 0.0:never, 1.0:always.
@@ -71,4 +71,8 @@ extra-death-loot:
     max: 5
     stack: false
 
+#
+# Whether to output a summary of all configured settings in the server log
+# (recommended).
+#
 log-summary: true

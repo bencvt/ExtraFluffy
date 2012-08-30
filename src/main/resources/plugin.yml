@@ -1,5 +1,5 @@
-name: ExtraFluffy
+name: ${project.name}
 version: ${project.version}
 author: bencvt
-website: http://dev.bukkit.org/server-mods/extrafluffy/
+website: ${project.url}
 main: bencvt.minecraft.server.extrafluffy.ExtraFluffyPlugin

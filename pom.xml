@@ -6,6 +6,7 @@
 	<packaging>jar</packaging>
 	<version>1.0.1-SNAPSHOT</version>
 	<name>ExtraFluffy</name>
+	<url>http://dev.bukkit.org/server-mods/extrafluffy/</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,7 +16,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
-			<version>1.2.5-R5.0</version>
+			<version>1.3.1-R2.0</version>
 		</dependency>
 	</dependencies>
 
@@ -36,16 +37,15 @@
 		<defaultGoal>clean package</defaultGoal>
 		<resources>
 			<resource>
-				<targetPath>.</targetPath>
 				<filtering>true</filtering>
-				<directory>${basedir}/src/main/resources/</directory>
+				<directory>${project.basedir}/src/main/resources/</directory>
 			</resource>
 		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.1</version>
+				<version>2.4</version>
 				<configuration>
 					<archive>
 						<addMavenDescriptor>false</addMavenDescriptor>
@@ -55,7 +55,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>2.5.1</version>
 				<configuration>
 					<source>1.5</source>
 					<target>1.5</target>
