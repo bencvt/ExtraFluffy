@@ -59,7 +59,10 @@ public class ConfigHelper
             if (lootInfo.item == null) {
                 // The node isn't a full serialized ItemStack. Assume it's a scalar
                 // and simply match it to a material type, either name or id.
-                lootInfo.item = new ItemStack(Material.matchMaterial(subSection.get("item").toString()));
+                Material material = Material.matchMaterial(subSection.get("item").toString());
+                if (material != null) {
+                    lootInfo.item = new ItemStack(material);
+                }
             }
             if (lootInfo.item == null) {
                 throw new IllegalArgumentException(subSectionName + ": invalid item " + String.valueOf(subSection.get("item")));
@@ -71,11 +74,15 @@ public class ConfigHelper
 
     private ExtraDropAmount getExtraDropAmount(ConfigurationSection subSection) {
         ExtraDropAmount result = new ExtraDropAmount();
-        result.chance = subSection.getDouble("chance");
+        if (subSection.isInt("chance")) {
+            result.chance = subSection.getInt("chance");
+        } else {
+            result.chance = subSection.getDouble("chance");
+        }
         result.min = subSection.getInt("min");
         result.max = subSection.getInt("max");
         result.stack = subSection.getBoolean("stack");
-        if (!subSection.isDouble("chance") || result.chance < 0.0 || result.chance > 1.0) {
+        if (!(subSection.isDouble("chance") || subSection.isInt("chance")) || result.chance < 0.0 || result.chance > 1.0) {
             throw new IllegalArgumentException("chance: " + String.valueOf(subSection.get("chance")) + " is not a number between 0.0 and 1.0");
         }
         if (!subSection.isInt("min")) {
