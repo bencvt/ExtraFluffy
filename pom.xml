@@ -4,7 +4,7 @@
 	<groupId>bencvt.minecraft.server</groupId>
 	<artifactId>ExtraFluffy</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<name>ExtraFluffy</name>
 	<url>http://dev.bukkit.org/server-mods/extrafluffy/</url>
 
